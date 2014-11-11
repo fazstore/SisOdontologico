@@ -12,8 +12,6 @@
 	$query2 = mysql_query($sql2, $conexion_mysql) or die(mysql_error());
 	$row2 = mysql_fetch_assoc($query2);
 	$tot_rows2 = mysql_num_rows($query2);
-	
-
 ?> 
 <script>
 		var Total=0;

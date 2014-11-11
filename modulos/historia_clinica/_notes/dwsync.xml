@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="cotizacion_PDF.php" server="odontoclinic.ec" local="130553973580369408" remote="130554157200000000" Dst="0" />
-<file name="Cotizar.php" server="odontoclinic.ec" local="130497772107420749" remote="130554157200000000" Dst="0" />
-<file name="hc_contenido.php" server="odontoclinic.ec" local="130553977590088479" remote="130554157200000000" Dst="0" />
-<file name="hc_cotizarModal.php" server="odontoclinic.ec" local="130463175424443574" remote="130554157200000000" Dst="0" />
-<file name="hc_odontograma_A.php" server="odontoclinic.ec" local="130454157392294231" remote="130462687800000000" Dst="0" />
-<file name="hc_odontograma_N.php" server="odontoclinic.ec" local="130448117948283459" remote="130462687800000000" Dst="0" />
-<file name="historia-clinica-index.php" server="odontoclinic.ec" local="130553095682518464" remote="130554157200000000" Dst="0" />
-<file name="historia_clinica_form.php" server="odontoclinic.ec" local="130553977660183073" remote="130554157200000000" Dst="0" />
-<file name="index.php" server="odontoclinic.ec" local="130333281364232004" remote="130462687800000000" Dst="0" />
-<file name="obj_odont.php" server="odontoclinic.ec" local="130356156729604886" remote="130462687800000000" Dst="0" />
-<file name="obj_odonto.php" server="odontoclinic.ec" local="130356086679832465" remote="130462687800000000" Dst="0" />
-<file name="Facturar.php" server="odontoclinic.ec" local="130547097461846950" remote="130554157200000000" Dst="0" />
-<file name="hc_facturarModal.php" server="odontoclinic.ec" local="130547928367944351" remote="130554157200000000" Dst="0" />
-<file name="Tratamientos_Facturar.php" server="odontoclinic.ec" local="130497024244306357" remote="130554157200000000" Dst="0" />
+<file name="historia-clinica-index.php" server="ejemplo.fazstore.com" local="130418109092471731" remote="130418605800000000" Dst="0" />
+<file name="odonto.php" server="ejemplo.fazstore.com" local="130353499901199266" remote="130353691800000000" Dst="0" />
+<file name="index.php" server="ejemplo.fazstore.com" local="130333281364232004" remote="130356261000000000" Dst="0" />
+<file name="obj_odonto.php" server="ejemplo.fazstore.com" local="130351555609285938" remote="130353691800000000" Dst="0" />
+<file name="historia_clinica_form.php" server="ejemplo.fazstore.com" local="130399383639915642" remote="130399221600000000" Dst="0" />
+<file name="hc_contenido.php" server="ejemplo.fazstore.com" local="130419960319438168" remote="130421980200000000" Dst="0" />
+<file name="hc_contenido.php" server="odontoclinic.ec" local="130601442936081358" remote="130561409400000000" Dst="0" />
+<file name="historia-clinica-index.php" server="odontoclinic.ec" local="130601442964100231" remote="130561409400000000" Dst="0" />
+<file name="historia_clinica_form.php" server="odontoclinic.ec" local="130601442964050249" remote="130561409400000000" Dst="0" />
+<file name="index.php" server="odontoclinic.ec" local="130601442977827004" remote="130462687800000000" Dst="0" />
+<file name="obj_odont.php" server="odontoclinic.ec" local="130601442978309682" remote="130462687800000000" Dst="0" />
+<file name="obj_odonto.php" server="odontoclinic.ec" local="130601442985906332" remote="130462687800000000" Dst="0" />
+<file name="odonto.php" server="odontoclinic.ec" local="130353499901199266" remote="130428093600000000" Dst="0" />
+<file name="hc_odontograma_N.php" server="odontoclinic.ec" local="130601442964690619" remote="130462687800000000" Dst="0" />
+<file name="hc_odontograma_A.php" server="odontoclinic.ec" local="130601442950201272" remote="130462687800000000" Dst="0" />
+<file name="hc_cotizarModal.php" server="odontoclinic.ec" local="130601442950211289" remote="130554169800000000" Dst="0" />
+<file name="Cotizar.php" server="odontoclinic.ec" local="130601442799527304" remote="130554169800000000" Dst="0" />
+<file name="cotizacion_PDF.php" server="odontoclinic.ec" local="130601442807364726" remote="130554169200000000" Dst="0" />
+<file name="Tratamientos_Facturar.php" server="odontoclinic.ec" local="130601442833064889" remote="130561409400000000" Dst="0" />
+<file name="Facturar.php" server="odontoclinic.ec" local="130601442834227159" remote="130571536200000000" Dst="0" />
+<file name="hc_facturarModal.php" server="odontoclinic.ec" local="130601442949801009" remote="130561409400000000" Dst="0" />
 </dwsync>
