@@ -109,13 +109,15 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 			url: url,
 			data: 'docu='+docu,
 			success : function (resultado){
-												if (resultado == "BORRAR")
+						if (resultado == "BORRAR")
 						{ 
 						$("#nombre").val("");
 						$("#direccion").val("");         
 						$("#telefono").val("");
 						$("#email").val("");
 						vex.dialog.alert("USUARIO NO REGISTRADO");
+						$("#bbus").hide();
+						$('#bcre').show();
 
 						}
 						
@@ -132,6 +134,45 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 			
 
 		}
+
+	function CrearCliente()
+		{ 
+			var nom = $("#nombre").val();
+			var doc = $("#documento").val();
+			var tel = $("#telefono").val();
+			var dir = $("#direccion").val();
+			var email = $("#email").val();
+			//$('#bcre').hide();
+			if((nom == "" ) || (doc == "" ) || (tel == "" ) || (dir == "" ) ||(email == "" ))
+			{ var mensaje = "Ingrese: ";
+				if(nom == "" )
+				{  mensaje = mensaje+" Nombre "; }
+				if(doc == "")
+				{  mensaje = mensaje+" Documento "; }
+				if(tel == "" )
+				{  mensaje = mensaje+" Teléfono "; }
+				if(dir == "" )
+				{  mensaje = mensaje+" Dirección "; }
+				if(email == "" )
+				{  mensaje = mensaje+" Email "; }
+				vex.dialog.alert( mensaje + " para continuar.");
+			
+			}else{
+				parametros='nom='+nom+'&doc='+doc+'&doc='+tel+'&tel='+dir+'&dir='+dir+'&email='+email;
+				//Detalle de Factura
+				$.ajax({
+					type: "POST",
+					url: url,
+					data: parametros,
+					success : function (resultado){
+						alert(resultado); 
+					}
+					});
+				//vex.dialog.alert( "Listo para Crear el usuario");
+			}
+				
+	}
+
 
 	 function solonumeros(e)
 		{
@@ -208,7 +249,7 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 						  		<td>Cédula: </td>
 								<td><input id="documento" maxlength="13" name="documento" placeholder="Cédula o Ruc" required onkeypress="return solonumeros(event)"></td>
                                 <td><input type="button" id="bbus" name="bbus" value="Buscar" class="btn btn-info" onClick="ValidarCliente()" ></td>
-                                <td><input type="button" id="bcre" name="bcre" value="CREAR" class="btn btn-info"></td>
+                                <td><input type="button" id="bcre" name="bcre" value="CREAR" class="btn btn-info" onClick="CrearCliente()"></td>
 						  	</tr>
 							  <tr>
 								<td>Nombre: </td>
@@ -221,7 +262,7 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 						  	</tr> 
                             <tr>
 						  		<td>Teléfono: </td>
-								<td><input id="telefono" name="telefono" placeholder="Teléfono"></td>
+								<td><input id="telefono" name="telefono" placeholder="Teléfono" maxlength="10" required onkeypress="return solonumeros(event)"></td>
 						  	</tr>
 								<tr>
 						  		<td>E-mail: </td>
