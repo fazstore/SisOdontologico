@@ -6,70 +6,11 @@ include('../../start.php');
 	$queryCotiza = mysql_query($sqlCotiza, $conexion_mysql) or die(mysql_error());
 	$rowCotiza = mysql_fetch_assoc($queryCotiza);
 	$tot_rowsCotiza = mysql_num_rows($queryCotiza);
-	
-	$sqlper = sprintf("SELECT * FROM persona inner join telefono on persona.per_id= telefono.per_id  
-WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
-	$queryper = mysql_query($sqlper, $conexion_mysql) or die(mysql_error());
-	$rowper = mysql_fetch_assoc($queryper);
-
 ?>
-<input type="hidden" id="per_id" name="per_id" value="<?php echo $per_id;?>" >
-<input type="hidden" id="URLper" name="URLper" value="<?php echo $RUTAm.'historia_clinica/funciones/bus-persona.php';?>">
 <script>
 	$( document ).ready(function() {
 		$("#btnfac").hide();
-		$("#bbus").hide();
-		$("#bcre").hide();
-		datosfac=$("#datosfac").val();
-		if(datosfac==1)
-		{ 
-			$("#nombre").val($("#nom").val());
-			$("#documento").val($("#doc").val());
-			$("#telefono").val($("#tel").val());
-			$("#direccion").val($("#dir").val());
-			$("#email").val($("#mail").val());
-			$("#nombre").attr('disabled',true);
-			$("#documento").attr('disabled',true);
-			$("#telefono").attr('disabled',true);
-			$("#direccion").attr('disabled',true);
-			$("#email").attr('disabled',true);
-			}
 	});
-	function datosfactura()
-	{	per_id=$("#per_id").val();
-		datosfac=$("#datosfac").val();
-		
-		if(datosfac==1)
-		{ 
-			$("#nombre").val($("#nom").val());
-			$("#documento").val($("#doc").val());
-			$("#telefono").val($("#tel").val());
-			$("#direccion").val($("#dir").val());
-			$("#email").val($("#mail").val());
-			$("#nombre").attr('disabled',true);
-			$("#documento").attr('disabled',true);
-			$("#telefono").attr('disabled',true);
-			$("#direccion").attr('disabled',true);
-			$("#email").attr('disabled',true);
-		$("#bbus").hide();
-		$("#bcre").hide();	
-		}
-		if(datosfac==2)
-		{ 
-			$("#nombre").val("");
-			$("#documento").val("");
-			$("#telefono").val("");
-			$("#direccion").val("");
-			$("#email").val("");
-			
-			$("#nombre").attr('disabled',false);
-			$("#documento").attr('disabled',false);
-			$("#telefono").attr('disabled',false);
-			$("#direccion").attr('disabled',false);
-			$("#email").attr('disabled',false);
-			$("#bbus").show();
-			}	
-	}
 	function FacturarTratamientos(fecha,per_id)
 	{ 
 		//Cabecera
@@ -91,109 +32,47 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 				alert(resultado); 
 			}
    			});
+	
 		}
-	function Validatefactura()
-		{ 
+			function Validatefactura()
+	{ 
 		id_fac=$("#id_fac").val();
+		
+		
 		if(id_fac!=null)
 		{
 			$("#btnfac").show();
 			}
+		
 		}
-	function ValidarCliente()
-		{ 
-		docu=$("#documento").val();
-		url=$("#URLper").val();
-		$.ajax({
-			type: "POST",
-			url: url,
-			data: 'docu='+docu,
-			success : function (resultado){
-						if (resultado == "BORRAR")
-						{ 
-						$("#nombre").val("");
-						$("#direccion").val("");         
-						$("#telefono").val("");
-						$("#email").val("");
-						vex.dialog.alert("USUARIO NO REGISTRADO");
-						$("#bbus").hide();
-						$('#bcre').show();
-
-						}
-						
-						var dataJson = eval(resultado);
-						for(var i in dataJson){
-						$("#nombre").val(dataJson[i].nom_res);
-						$("#direccion").val(dataJson[i].direc_res);         
-						$("#telefono").val(dataJson[i].tel);
-						$("#email").val(dataJson[i].email);
-						}
-						
-				}
-   			});
-			
-
-		}
-
-	function CrearCliente()
-		{ 
-			var nom = $("#nombre").val();
-			var doc = $("#documento").val();
-			var tel = $("#telefono").val();
-			var dir = $("#direccion").val();
-			var email = $("#email").val();
-			//$('#bcre').hide();
-			if((nom == "" ) || (doc == "" ) || (tel == "" ) || (dir == "" ) ||(email == "" ))
-			{ var mensaje = "Ingrese: ";
-				if(nom == "" )
-				{  mensaje = mensaje+" Nombre "; }
-				if(doc == "")
-				{  mensaje = mensaje+" Documento "; }
-				if(tel == "" )
-				{  mensaje = mensaje+" Teléfono "; }
-				if(dir == "" )
-				{  mensaje = mensaje+" Dirección "; }
-				if(email == "" )
-				{  mensaje = mensaje+" Email "; }
-				vex.dialog.alert( mensaje + " para continuar.");
-			
-			}else{
-				parametros='nom='+nom+'&doc='+doc+'&doc='+tel+'&tel='+dir+'&dir='+dir+'&email='+email;
-				//Detalle de Factura
-				$.ajax({
-					type: "POST",
-					url: url,
-					data: parametros,
-					success : function (resultado){
-						alert(resultado); 
-					}
-					});
-				//vex.dialog.alert( "Listo para Crear el usuario");
-			}
-				
-	}
-
-
-	 function solonumeros(e)
-		{
-		var keynum = window.event ? window.event.keyCode : e.which;
-		if ((keynum == 8) || (keynum == 46))
-		return true;
-		 
-		return /\d/.test(String.fromCharCode(keynum));
-		}
-
-
 </script>
   <?php if($tot_rowsCotiza > 0)	{ ?>
                   <div class="row-fluid">
-					<?php do {
+					<table class="table table-bordered table-condensed table-striped" id="tab_usr">
+		 				<thead>
+     					     <tr>
+                              <th>Código</th>
+                              <th>Tratamiento</th>
+                              <th>Cant</th>
+                              <th>Valor</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <?php do {
 							  $totalTra=($rowCotiza['det_tra_rea_cantidad']*$rowCotiza['pre_val']);
 							  $descuento=($rowCotiza['pre_val']/100);
 							  $totdes=($totdes+($totalTra*$descuento));
 							  $totalTra2=$totalTra2+$totalTra; 
 							   ?>
+                              <tr>
+                                  <td><?php echo $rowCotiza['tra_id']; ?></td>
+                                  <td><?php echo $rowCotiza['tra_nom']; ?></td>
+                                  <td><?php echo $rowCotiza['det_tra_rea_cantidad']; ?></td>
+                                  <td><?php echo $totalTra;?></td>
+                              </tr>
                           <?php } while ($rowCotiza = mysql_fetch_assoc($queryCotiza)); ?>
+                          </tbody>
+                      </table>
                       <strong>VALOR TOTAL:  $ <a style="font-size:18px"><?php echo $totalTra2;?></a></strong>
                      </div>
                   <?php mysql_free_result($queryCotiza);
@@ -224,61 +103,30 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
                      <div class="span1">
                      </div>
                      <div class="span5">
-                     <div>
-                     <strong>Datos de la Factura</strong>
-                     <select id="datosfac" name="datosfac" style=" width:170px" onchange="datosfactura()">
-                     	<option value="1" selected>Datos del Paciente</option>
-                     	<option value="2">Datos del Terceros</option>
-                     </select>
-                     </div>
+                    <button type="button" class="btn btn-primary"  onClick="modalfac()"> <strong>DATOS DE LA FACTURA</strong></button>
                      <button style="height:60px" class="btn btn-primary" id="btnfac" name="btnfac"  onClick="FacturarTratamientos('<?php echo $tra_rea_fec; ?>','<?php echo $per_id; ?>')"><strong> Confirmar Factura</strong></button>
                      </div> 
                  </div>
                  </div>
-             		<div class="row-fluid" >
-						<input type="hidden" id="doc" name="doc" value="<?php echo $rowper['per_documento'];?>">
-                        <input type="hidden" id="nom" name="nom" value="<?php echo $rowper['per_nombre'];?>">
-                        <input type="hidden" id="tel" name="tel" value="<?php echo $rowper['tel_numero'];?>">
-                        <input type="hidden" id="dir" name="dir" value="<?php echo $rowper['per_direccion1'];?>">
-                        <input type="hidden" id="mail" name="mail" value="<?php echo $rowper['per_mail'];?>">
-                      <table>
-						  <th></th>
-                          
-						  <tbody>
-						  	<tr>
-						  		<td>Cédula: </td>
-								<td><input id="documento" maxlength="13" name="documento" placeholder="Cédula o Ruc" required onkeypress="return solonumeros(event)"></td>
-                                <td><input type="button" id="bbus" name="bbus" value="Buscar" class="btn btn-info" onClick="ValidarCliente()" ></td>
-                                <td><input type="button" id="bcre" name="bcre" value="CREAR" class="btn btn-info" onClick="CrearCliente()"></td>
-						  	</tr>
-							  <tr>
-								<td>Nombre: </td>
-								<td><input id="nombre" name="nombre" placeholder="Nombre"></td>
-						  	</tr>
-							
-                            <tr>
-						  		<td>Dirección: </td>
-								<td><input id="direccion" name="direccion" placeholder="Dirección "></td>
-						  	</tr> 
-                            <tr>
-						  		<td>Teléfono: </td>
-								<td><input id="telefono" name="telefono" placeholder="Teléfono" maxlength="10" required onkeypress="return solonumeros(event)"></td>
-						  	</tr>
-								<tr>
-						  		<td>E-mail: </td>
-								<td><input id="email" name="email" placeholder="E-mail"></td>
-						  	</tr>
-								<tr>
-						  		<td>N. Factura: </td>
-								<td><input id="id_fac" name="id_fac" placeholder="Número de Factura" onKeyPress="Validatefactura()" required></td>
-						  	</tr>
-						  </tbody>
-					   </table>
-                 <div>
-               
-                
-                 </div>    
-                 </div>	  
-                       
+                 Número de Factura 
+                 <input type="text" name="id_fac" id="id_fac" placeholder="Número de Factura" onKeyPress="Validatefactura()" required>
+                 
+                 
+                            <!-- Modal -->
+        <div align="center" id="modalfac"   class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalfac" aria-hidden="true">
+          <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 id="modalcredito"><strong>Datos de la Factura</strong></h4>
+                <div align="center">
+              
+            </div>
+          </div>
+          <div class="modal-body">
+            ==============> hola 
+          </div>
+          <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+          </div>
+        </div>
 
  

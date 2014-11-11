@@ -14,11 +14,7 @@
 </head>
 <body>
 	<?php include(RUTAcom.'menu-principal.php');?>
-    <div class="row-fluid">
-    	<div class="span10" id="calendar" name="calendar" ></div>
-
-        <input type="hidden" id="Url" value="<?php echo $RUTAm."citas/Agenda/funciones.php"; ?>">
-    </div>
+    <div id='calendar'></div>
 </body>
 <footer>	
 </footer>
@@ -26,38 +22,13 @@
 
 
 <script type="text/javascript">
-/*$(document).ready(function() {
-    var date = new Date();
-		var d = date.getDate();
-		var m = date.getMonth();
-		var y = date.getFullYear();
-		var url = $("#Url").val();
-		
-		$('#calendar').fullCalendar({
-			theme: true,
-			draggable: true,
-			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
-			},
-			editable: true,
-			events: {
-			url: 'funciones.php',
-			type: 'POST',
-			error: function() {
-				alert('There was an error while fetching events.'); // Error alert
-			}
-},
+$(document).ready(function() {
 
-	});
+    // page is now ready, initialize the calendar...
 
-});*/
-  $(document).ready(function() {
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+    })
 
-        $('#calendar ').fullCalendar({
-        });
-
-    });
-
- </script>
+});
+</script>

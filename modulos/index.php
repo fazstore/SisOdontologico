@@ -36,7 +36,12 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
 </head>    
 <body>
 	<?php include(RUTAcom.'menu-principal.php'); 
-	
+	$fechacita= date("Y-m-d");
+	$sql = sprintf("SELECT phpc_events.eid, phpc_events.subject, phpc_events.description, phpc_occurrences.start_ts, phpc_occurrences.end_ts FROM phpc_events 
+inner join phpc_occurrences on phpc_events.eid = phpc_occurrences.eid where phpc_occurrences.start_ts>='".$fechacita." 01:00:00' and phpc_occurrences.end_ts<='".$fechacita." 24:00:00' ORDER BY phpc_occurrences.start_ts ASC");
+	$query = mysql_query($sql, $conexion_mysql) or die(mysql_error());
+	$row = mysql_fetch_assoc($query);
+	$tot_rows = mysql_num_rows($query);
 	?>       
 	<div class="container">    
     	<br/>

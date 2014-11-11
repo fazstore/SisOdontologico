@@ -22,13 +22,14 @@
 			window.open( "cotizacion_PDF.php?id="+per_id , "Cotización de Tratamientos" , "width=800 , height = 600");
 		}
 </script> 
-<div id="ModalFacturar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" width="1200px" >
+<div id="ModalFacturar" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" width="800px" >
     <div class="modal-header" >
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h4 id="myModalLabel">Facturar Tratamientos de <?php echo $datpac['per_nombre']; ?></h4>
     </div>
           <div class="modal-body">
             <?php 	$tra_rea_fec = date('Y-m-d');?>	
+            <input >
 					
             <div>
               
@@ -37,7 +38,6 @@
 			    <div class="control-group well" >
                      <h4 style="color:#036"> <i class="icon-file"></i> Tratamientos a Facturar</h4>
                      <div class="control-group well" id="contFormatFacturar">
-                     
                      </div>
 
 					 
