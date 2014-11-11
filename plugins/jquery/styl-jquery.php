@@ -1,20 +1,20 @@
 <!-- llamando a los estilos y librerias de jquery -->
-<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery.min.js'; ?>"></script>
-<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery-ui-1.10.3.custom.min.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery-2.1.1.min.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery-ui.min.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery-ui.custom.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/chosen.jquery.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery.gritter.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/fullcalendar.min.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/gcal.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/moment.min.js'; ?>"></script>
-<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/lang-all	.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/es.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/bootstrap-wysihtml5.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAm.'historia_clinica/js-fncs/funciones-odontograma.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAcom.'ckeditor/ckeditor.js'; ?>"></script>
-<script type="text/javascript" src="<?php echo $RUTAcom.'ckeditor/_samples/sample.js'; ?>"></script>
 
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo $RUTAcom.'ckeditor/_samples/sample.css'; ?>" ></link>
-<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/jquery-ui-1.10.3.custom.min.css'; ?>"></link>
+<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/jquery-ui.min.css'; ?>"></link>
 <link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/chosen.css'; ?>"></link>
 <link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/jquery.gritter.css'; ?>"></link>
 <link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/fullcalendar.css'; ?>"></link>

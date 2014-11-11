@@ -44,6 +44,7 @@
 				<thead>
 					<tr>
 						<th width="125px"></th>
+						<th>Id</th>
                         <th>Categoría</th>
 					</tr>
 				</thead>
@@ -56,7 +57,8 @@
 								<a href="<?php echo $RUTAm; ?>administrador/funciones/categorias_tratamientos-fncs.php?tra_cat_id=<?php echo $row['tra_cat_id']; ?>&accion=Eliminar" class="btn btn-danger btn-mini" onClick="javascript:return confirm('¿Esta seguro que desea eliminar <?php echo $row['tra_cat_nom']; ?>?');"><i class="icon-trash"></i> Eliminar</a>
                     		</div>
 						</td>
-                        <td ><?php echo $row['tra_cat_nom']; ?></td>
+                        <td><?php echo $row['tra_cat_id']; ?></td>
+                        <td><?php echo $row['tra_cat_nom']; ?></td>
 						</tr>
 					<?php } while ($row = mysql_fetch_assoc($query)); ?>
 				</tbody>
