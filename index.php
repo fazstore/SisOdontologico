@@ -68,7 +68,7 @@
                 <form name="form_login" class="formulario-login" method="POST" action="<?php echo $loginFormAction; ?>">
                     <h3>Acceso al sistema</h3>
                     <?php
-                        if($_GET['wrong']=='wd'){
+						if(isset($_GET['wrong'])&&($_GET['wrong']=='wd')){
 							echo '<div class="alert alert-error">';
 							echo '<button type="button" class="close" data-dismiss="alert">&times;</button>';
 							echo '<h6>Datos incorrectos, por favor intente de nuevo.</h6>';

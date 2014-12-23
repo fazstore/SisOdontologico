@@ -1,27 +1,24 @@
-<!-- llamando a los estilos y librerias de jquery -->
+<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/jquery-ui.min.css'; ?>"></link>
+<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/chosen.css'; ?>"></link>
+<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/jquery.gritter.css'; ?>"></link>
+<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/css001.css'; ?>"></link>
+<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/bootstrap-wysihtml5.css'; ?>"></link>
+<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'fullcalendar-2.2.2/fullcalendar.min.css'; ?>"></link>
+<link type="text/css" rel="stylesheet" media="print" href="<?php echo $RUTAp.'fullcalendar-2.2.2/fullcalendar.print.css'; ?>"></link>
+
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery-2.1.1.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery-ui.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery-ui.custom.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/chosen.jquery.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery.gritter.min.js'; ?>"></script>
-<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/fullcalendar.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/gcal.js'; ?>"></script>
-<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/moment.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/es.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/bootstrap-wysihtml5.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAm.'historia_clinica/js-fncs/funciones-odontograma.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAcom.'ckeditor/ckeditor.js'; ?>"></script>
-
-
-
-<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/jquery-ui.min.css'; ?>"></link>
-<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/chosen.css'; ?>"></link>
-<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/jquery.gritter.css'; ?>"></link>
-<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/fullcalendar.css'; ?>"></link>
-<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/fullcalendar.print.css'; ?>"></link>
-<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/css001.css'; ?>"></link>
-<link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/bootstrap-wysihtml5.css'; ?>"></link>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="<?php echo $RUTAp.'fullcalendar-2.2.2/lib/moment.min.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo $RUTAp.'fullcalendar-2.2.2/fullcalendar.min.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo $RUTAp.'fullcalendar-2.2.2/lang/es.js'; ?>"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript">
