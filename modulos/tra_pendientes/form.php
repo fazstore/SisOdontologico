@@ -44,17 +44,16 @@ $('.textarea').wysihtml5();
 	fnc_msgGritter();
 	?>
  <div class="container">
-		<div class="page-header"><h3><?php echo strtoupper($accion); ?> HISTORÍA CLÍNICA</h3></div>
+		<div class="page-header"><h3> Tratamientos pendientes de <?php echo $datpac['per_nombre']?></h3></div>
 		<div class="row-fluid">
         	<div class="span8">
                 <ul class="breadcrumb">
                     <li>
                         <i class="icon-home"></i>
-                        <a href="<?php echo $RUTAm; ?>historia_clinica/historia-clinica-index.php"> Historia Clínica</a>
-                        <span class="divider">/</span>
+                        <a href="<?php echo $RUTAm; ?>tra_pacientes/index.php"> Buscar de tratamientos de otros paciente. </a>
+
                     </li>
-                    <li class="active"><?php echo $accion; ?> Historia Clínica</li>
-                    <button id="tratamientos_menu" href="#tratamientos">Tratamientos Pendientes</button>
+
                      <div name="tratamientos" id="tratamientos" class="panel">
                     <h2>TRATAMIENTOS PENDIENTES</h2>
                     <p>Realizar</p>
@@ -148,8 +147,9 @@ echo $dias[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y'
             </div> 
     	</div>
     </div>
-    <div>
-    <?php include "hc_contenido.php";     ?>
+    <div CLASS="ROW-FLUID">
+        <div class="span1"> </div><div class="span10"> <?php include "tra_pendientes.php";?>    </div><div class="span1"> </div>
+
     </div>
 
 <body>

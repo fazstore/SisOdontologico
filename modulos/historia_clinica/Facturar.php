@@ -15,12 +15,15 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 ?>
 <input type="hidden" id="per_id" name="per_id" value="<?php echo $per_id;?>" >
 <input type="hidden" id="URLper" name="URLper" value="<?php echo $RUTAm.'historia_clinica/funciones/bus-persona.php';?>">
+<input type="hidden" id="URL_CREA_per" name="URL_CREA_per" value="<?php echo $RUTAm.'historia_clinica/funciones/crea-persona.php';?>">
 <script>
 	$( document ).ready(function() {
 		$("#btnfac").hide();
 		$("#bbus").hide();
 		$("#bcre").hide();
-		datosfac=$("#datosfac").val();
+        $("#imp_fac").hide();
+
+        datosfac=$("#datosfac").val();
 		if(datosfac==1)
 		{ 
 			$("#nombre").val($("#nom").val());
@@ -61,7 +64,6 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 			$("#telefono").val("");
 			$("#direccion").val("");
 			$("#email").val("");
-			
 			$("#nombre").attr('disabled',false);
 			$("#documento").attr('disabled',false);
 			$("#telefono").attr('disabled',false);
@@ -79,17 +81,17 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 		tdescuento=$("#tdescuento").val();
 		id_fac=$("#id_fac").val();
 		url=$("#urlfac").val();
-		alert(fecha+" "+per_id+" "+ModelodePago+" "+Descuento +" "+id_fac);
+		//alert(fecha+" "+per_id+" "+ModelodePago+" "+Descuento +" "+id_fac);
 		parametros='ModelodePago='+ModelodePago+'&Descuento='+Descuento+'&id_fac='+id_fac+'&tdescuento='+tdescuento+'&total='+total+'&fecha='+fecha+'&per_id='+per_id;
-		
 		//Detalle de Factura
 		$.ajax({
 			type: "POST",
 			url: url,
 			data: parametros,
 			success : function (resultado){
-				alert(resultado); 
-			}
+				vex.dialog.alert(resultado);
+                $("#imp_fac").show();
+                            }
    			});
 		}
 	function Validatefactura()
@@ -118,9 +120,7 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 						vex.dialog.alert("USUARIO NO REGISTRADO");
 						$("#bbus").hide();
 						$('#bcre').show();
-
 						}
-						
 						var dataJson = eval(resultado);
 						for(var i in dataJson){
 						$("#nombre").val(dataJson[i].nom_res);
@@ -128,11 +128,8 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 						$("#telefono").val(dataJson[i].tel);
 						$("#email").val(dataJson[i].email);
 						}
-						
 				}
    			});
-			
-
 		}
 
 	function CrearCliente()
@@ -158,22 +155,26 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 				vex.dialog.alert( mensaje + " para continuar.");
 			
 			}else{
-				parametros='nom='+nom+'&doc='+doc+'&doc='+tel+'&tel='+dir+'&dir='+dir+'&email='+email;
+				parametros='nom='+nom+'&doc='+doc+'&tel='+tel+'&dir='+dir+'&dir='+dir+'&email='+email;
 				//Detalle de Factura
+				var url = $("#URL_CREA_per").val();
 				$.ajax({
 					type: "POST",
 					url: url,
 					data: parametros,
 					success : function (resultado){
-						alert(resultado); 
+						if (resultado == "Insertado")
+						{
+							vex.dialog.alert("Creado exitosamente.");
+						} else{
+							vex.dialog.alert("Error al Crear");
+							}
+						//vex.dialog.alert(parametros);
 					}
 					});
-				//vex.dialog.alert( "Listo para Crear el usuario");
+				//vex.dialog.alert( "Listo para Crear el usuario con ");
 			}
-				
-	}
-
-
+		}
 	 function solonumeros(e)
 		{
 		var keynum = window.event ? window.event.keyCode : e.which;
@@ -182,14 +183,12 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 		 
 		return /\d/.test(String.fromCharCode(keynum));
 		}
-
-
 </script>
   <?php if($tot_rowsCotiza > 0)	{ ?>
                   <div class="row-fluid">
 					<?php do {
 							  $totalTra=($rowCotiza['det_tra_rea_cantidad']*$rowCotiza['pre_val']);
-							  $descuento=($rowCotiza['pre_val']/100);
+							  $descuento=($rowCotiza['pre_des']/100);
 							  $totdes=($totdes+($totalTra*$descuento));
 							  $totalTra2=$totalTra2+$totalTra; 
 							   ?>
@@ -250,6 +249,8 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 								<td><input id="documento" maxlength="13" name="documento" placeholder="Cédula o Ruc" required onkeypress="return solonumeros(event)"></td>
                                 <td><input type="button" id="bbus" name="bbus" value="Buscar" class="btn btn-info" onClick="ValidarCliente()" ></td>
                                 <td><input type="button" id="bcre" name="bcre" value="CREAR" class="btn btn-info" onClick="CrearCliente()"></td>
+                                <<!--td><input type="button" id="imp_fac" name="imp_fac" value="Imprimir Factura" class="btn btn-inverse" onClick="ImprimirFact('<?php echo $tra_rea_fec; ?>','<?php echo $per_id; ?>')" > -->
+                                </td>
 						  	</tr>
 							  <tr>
 								<td>Nombre: </td>
@@ -272,13 +273,32 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 						  		<td>N. Factura: </td>
 								<td><input id="id_fac" name="id_fac" placeholder="Número de Factura" onKeyPress="Validatefactura()" required></td>
 						  	</tr>
-						  </tbody>
+
+                          </tbody>
 					   </table>
                  <div>
                
                 
                  </div>    
-                 </div>	  
-                       
+                 </div>
 
- 
+<script>
+
+    function ImprimirFact(fac,per_id)
+    {
+
+        urlCot=$("#urlCot").val();
+        var tra_rea = "per_id="+per_id+"&fecha="+fecha;
+        $.ajax({
+            type: "POST",
+            url: urlCot,
+            data: tra_rea,
+            success : function (resultado) {
+                //alert("Paciente Evolucionado");
+            }
+        });
+        //
+
+        window.open( "cotizacion_PDF.php?id="+per_id , "Cotización de Tratamientos" , "width=800 , height = 600");
+    }
+</script>

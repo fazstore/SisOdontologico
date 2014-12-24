@@ -6,7 +6,7 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8"></meta>
+	<meta charset="utf-8">
 	<title>Gestión de precios</title>
     <?php include(RUTAp.'jquery/styl-jquery.php'); ?>
     <?php require_once(RUTAs.'styles/styl-bootstrap.php'); ?>

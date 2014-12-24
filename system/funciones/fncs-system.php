@@ -345,7 +345,8 @@ function fnc_datCatPreTra($pre_id){
 //fincion general de busqueda
 function fnc_datGeneral($id,$variable,$tabla){
 	include(RUTAcon.'conexion-mysql.php');
-	$sql = sprintf("SELECT * FROM ".$tabla." WHERE ".$variable."  = %s ", GetSQLValueString($id, "int"));
+	$sql = sprintf("SELECT * FROM ".$tabla." WHERE ".$variable."  = %s ", 
+	GetSQLValueString($id, "int"));
 	$query = mysql_query($sql, $conexion_mysql) or die(mysql_error());
 	$row = mysql_fetch_assoc($query);
 	return $row;

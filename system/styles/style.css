@@ -7,7 +7,7 @@
     position: relative;
   }
   .tooltip:hover:after {
-    bottom: 26px;
+    bottom: 46px;
     content: attr(title); /* este es el texto que será mostrado */
     left: 20%;
     position: absolute;
@@ -24,7 +24,7 @@
     width: 150px;
   }
   .tooltip:hover:before {
-    bottom: 20px;
+    bottom: 40px;
     content: "";
     left: 50%;
     position: absolute;
@@ -34,4 +34,5 @@
     border-color: rgba(255,255,255, 0.2) transparent;
     border-width: 6px 6px 0 6px;
   }
+
 </style>
