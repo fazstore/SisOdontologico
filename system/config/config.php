@@ -28,10 +28,7 @@ $RUTAs=$RUTA.'system/';
 
 $_SESSION['urlp']=$_SESSION['urlc'];
 $_SESSION['urlc']=basename($_SERVER['SCRIPT_FILENAME']);//URL clean Current;
-$sdate=date('Y-m-d');
-$sdatet=date('Y-m-d H:m:s');
+$sdate=date("Y-m-d",time()-21600);
+$sdatet=date("Y-m-d H:i:s",time()-21600);
 setlocale(LC_ALL,"es_ES@euro","es_ES","esp");
-
-
-
 ?>

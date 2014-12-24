@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="historiaclinica-fncs.php" server="ejemplo.fazstore.com" local="130327551963754899" remote="130353691800000000" Dst="0" />
-<file name="historiaclinica-fncs.php" server="odontoclinic.ec" local="130327551963754899" remote="130462687200000000" Dst="0" />
-<file name="odontograma-fncs.php" server="odontoclinic.ec" local="130440885794752192" remote="130462687800000000" Dst="0" />
-<file name="bus-odon-items.php" server="odontoclinic.ec" local="130452891201304264" remote="130462687200000000" Dst="0" />
-<file name="bus-paciente.php" server="odontoclinic.ec" local="130454137412411421" remote="130462687200000000" Dst="0" />
-<file name="bus-tra-items.php" server="odontoclinic.ec" local="130452936900799842" remote="130462687800000000" Dst="0" />
-<file name="tratamientos-fncs.php" server="odontoclinic.ec" local="130455607338289121" remote="130462687800000000" Dst="0" />
-<file name="funciones.php" server="odontoclinic.ec" local="130497912751799830" remote="130561409400000000" Dst="0" />
+<file name="historiaclinica-fncs.php" server="odontoclinic.ec" local="130327551963754899" remote="130633974000000000" Dst="0" />
+<file name="odontograma-fncs.php" server="odontoclinic.ec" local="130440885794752192" remote="130633974000000000" Dst="0" />
+<file name="bus-odon-items.php" server="odontoclinic.ec" local="130452891201304264" remote="130633974000000000" Dst="0" />
+<file name="bus-paciente.php" server="odontoclinic.ec" local="130454137412411421" remote="130633974000000000" Dst="0" />
+<file name="bus-tra-items.php" server="odontoclinic.ec" local="130452936900799842" remote="130633974000000000" Dst="0" />
+<file name="tratamientos-fncs.php" server="odontoclinic.ec" local="130455607338289121" remote="130633974000000000" Dst="0" />
+<file name="funciones.php" server="odontoclinic.ec" local="130634350361608354" remote="130634575200000000" Dst="0" />
 <file name="bus-persona.php" server="odontoclinic.ec" local="130571350064791794" remote="130571536800000000" Dst="0" />
+<file name="bus-odontograma.php" server="odontoclinic.ec" local="130327538737648185" remote="130633974000000000" Dst="0" />
+<file name="crea-persona.php" server="odontoclinic.ec" local="130631745315493046" remote="130633974000000000" Dst="0" />
+<file name="pacientes-fncs.php" server="odontoclinic.ec" local="130306958399536696" remote="130633974000000000" Dst="0" />
+<file name="persona-cliente-fncs.php" server="odontoclinic.ec" local="130589434036260699" remote="130633974000000000" Dst="0" />
+<file name="sum_tra.php" server="odontoclinic.ec" local="130418517160955985" remote="130633974000000000" Dst="0" />
 </dwsync>

@@ -15,7 +15,7 @@
 <file name="categorias_tratamientos-form.php" server="ejemplo.fazstore.com" local="130369539951384950" remote="130369956000000000" Dst="0" />
 <file name="precios-form.php" server="ejemplo.fazstore.com" local="130418176725119831" remote="130418607000000000" Dst="0" />
 <file name="precios-index.php" server="ejemplo.fazstore.com" local="130419200137872098" remote="130419383400000000" Dst="0" />
-<file name="categorias_tratamientos-form.php" server="odontoclinic.ec" local="130369539951384950" remote="130428090000000000" Dst="0" />
+<file name="categorias_tratamientos-form.php" server="odontoclinic.ec" local="130636804356188216" remote="130427892000000000" Dst="0" />
 <file name="categorias_tratamientos-index.php" server="odontoclinic.ec" local="130553077069261120" remote="130553265600000000" Dst="0" />
 <file name="index.php" server="odontoclinic.ec" local="130333319877085211" remote="130428090000000000" Dst="0" />
 <file name="precios-form.php" server="odontoclinic.ec" local="130418176725119831" remote="130428090000000000" Dst="0" />
@@ -28,6 +28,6 @@
 <file name="tratamientos-index.php" server="odontoclinic.ec" local="130553083273893910" remote="130553265600000000" Dst="0" />
 <file name="usuarios-form.php" server="odontoclinic.ec" local="130284998286877326" remote="130428090000000000" Dst="0" />
 <file name="usuarios-index.php" server="odontoclinic.ec" local="130284998295503102" remote="130428090000000000" Dst="0" />
-<file name="_cho_crear-editar.php" server="odontoclinic.ec" local="130284998249512223" remote="130428090000000000" Dst="0" />
-<file name="_mod_crear-editar.php" server="odontoclinic.ec" local="130284998263481609" remote="130428090000000000" Dst="0" />
+<file name="_cho_crear-editar.php" server="odontoclinic.ec" local="130636804354576851" remote="130427892000000000" Dst="0" />
+<file name="_mod_crear-editar.php" server="odontoclinic.ec" local="130636804355387413" remote="130427892000000000" Dst="0" />
 </dwsync>

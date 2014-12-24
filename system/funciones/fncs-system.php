@@ -87,11 +87,11 @@ function fnc_listEmp($id_user=NULL, $clase=NULL, $id=NULL, $opt=NULL){
 function fnc_genSelect($datos=NULL, $clase=NULL, $id=NULL, $opt=NULL){
 	include(RUTAcon.'conexion-mysql.php');
 	$tot_rows = mysql_num_rows($datos);
-	if($tot_rows>0) $txt = 'Seleccione';
-	else $txt = 'No existen sucursales';	
+	if($tot_rows>0) $txt = 'Seleccione una opción';
+	else $txt = 'No existen resultados';
 	
 	echo '<select class="'.$clase.'" id="'.$id.'" name="'.$id.'" '.$opt.'>';
-	echo '<option disabled selected>'.$txt.'</option>';
+	echo '<option value="0" disabled selected>'.$txt.'</option>';
 	while($row = mysql_fetch_assoc($datos)){
 		echo '<option value="'.$row['id'].'">'.$row['nombre'].'</option>';
 	}
@@ -180,10 +180,37 @@ function fnc_datosSuc(){
 //DATOS TRATAMIENTO
 function fnc_datTra($id){
 	include(RUTAcon.'conexion-mysql.php');
-	$sql = sprintf("SELECT * FROM tratamientos inner join tra_categorias on tratamientos.tra_cat_id = tra_categorias.tra_cat_id  WHERE tratamientos.tra_elim = 'N'and tratamientos.tra_id = %s AND tra_elim='N'", GetSQLValueString($id, "int"));
+	$sql = sprintf("SELECT * FROM tratamientos inner join tra_categorias on tratamientos.tra_cat_id = tra_categorias.tra_cat_id  WHERE tratamientos.tra_elim = 'N' AND tratamientos.tra_id = %s AND tra_elim='N'", GetSQLValueString($id, "int"));
 	$query = mysql_query($sql, $conexion_mysql) or die(mysql_error());
 	$row = mysql_fetch_assoc($query);
 	return $row;
+	mysql_free_result($query);
+}
+
+//DATOS TRATAMIENTOS
+function fnc_datosTratamientos(){
+	include(RUTAcon.'conexion-mysql.php');
+	$sql = sprintf("SELECT tra_id AS id, tra_nom AS nombre FROM tratamientos WHERE tra_elim!=%s ORDER BY nombre", GetSQLValueString('S', "text"));
+	$query = mysql_query($sql, $conexion_mysql) or die(mysql_error());
+	return $query;
+	mysql_free_result($query);
+}
+
+//OBTIENE LOS TURNOS
+function fnc_getTurnos(){
+	include(RUTAcon.'conexion-mysql.php');
+	$sql = sprintf("SELECT ID_TURNO AS id, tur_hora AS nombre FROM turno WHERE tur_eliminado != %s", GetSQLValueString('S', "text"));
+	$query = mysql_query($sql, $conexion_mysql) or die(mysql_error());
+	return $query;
+	mysql_free_result($query);
+}
+
+//OBTIENE TURNOS POR ID_TURNO
+function fnc_getTurno($id){
+	include(RUTAcon.'conexion-mysql.php');
+	$sql = sprintf("SELECT * FROM turno WHERE tur_eliminado != %s AND ID_TURNO = %s", GetSQLValueString("S", "text"), GetSQLValueString($id, "int"));
+	$query = mysql_query($sql, $conexion_mysql) or die(mysql_error());
+	return $query;
 	mysql_free_result($query);
 }
 

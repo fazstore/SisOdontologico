@@ -2,7 +2,7 @@
 
 //LOCAL
 $hostname = "localhost";
-$database = "sistema_odontologico";
+$database = "SO";
 $username = "root";
 $password = "root";
 $conexion_mysql = mysql_pconnect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR);

@@ -1,6 +1,9 @@
 <?php 
 	
 	include('start.php');
+	echo date("d-m-Y",time()-21600);
+	echo "<br />";
+	echo date("d-m-Y H:i:s",time()-21600);
 ?>
 <script>
 function conf_existencia(Sec)

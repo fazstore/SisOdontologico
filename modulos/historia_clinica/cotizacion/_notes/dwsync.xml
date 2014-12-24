@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="cotizacion_print.php" server="odontoclinic.ec" local="130458044678854059" remote="130458334200000000" Dst="0" />
-<file name="cotizacion_formato.php" server="odontoclinic.ec" local="130458175282852315" remote="130458352800000000" Dst="0" />
+<file name="cotizacion_print.php" server="odontoclinic.ec" local="130458044678854059" remote="130634575200000000" Dst="0" />
+<file name="cotizacion_formato.php" server="odontoclinic.ec" local="130462370169956950" remote="130634575200000000" Dst="0" />
+<file name="cotizacion_test.php" server="odontoclinic.ec" local="130458883666487747" remote="130634575200000000" Dst="0" />
+<file name="facturar.php" server="odontoclinic.ec" local="130458036463040662" remote="130634575200000000" Dst="0" />
 </dwsync>
