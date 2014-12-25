@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="bus-pac.php" server="ejemplo.fazstore.com" local="130375618861751053" remote="130333468800000000" Dst="0" />
-<file name="bus-pac.php" server="odontoclinic.ec" local="130375618861751053" remote="130428093000000000" Dst="0" />
+<file name="bus-pac.php" server="odontoclinic.ec" local="130638637874241669" remote="130640134200000000" Dst="0" />
+<file name="getReservas.php" server="odontoclinic.ec" local="130638637874321722" remote="130640134200000000" Dst="0" />
+<file name="saveReservarCita.php" server="odontoclinic.ec" local="130638637874391767" remote="130640134200000000" Dst="0" />
+<file name="getDataPaciente.php" server="odontoclinic.ec" local="130638637874281675" remote="130640134200000000" Dst="0" />
+<file name="getTurnoDisponible.php" server="odontoclinic.ec" local="130638637874361737" remote="130640134200000000" Dst="0" />
+<file name="_add_events.php" server="odontoclinic.ec" local="130638637874161591" remote="130640134200000000" Dst="0" />
+<file name="_update_events.php" server="odontoclinic.ec" local="130638637874201622" remote="130640134200000000" Dst="0" />
 </dwsync>

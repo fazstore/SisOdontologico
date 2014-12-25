@@ -16,7 +16,6 @@
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/bootstrap-wysihtml5.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAm.'historia_clinica/js-fncs/funciones-odontograma.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAcom.'ckeditor/ckeditor.js'; ?>"></script>
-<<<<<<< HEAD
 <script type="text/javascript" src="<?php echo $RUTAs.'styles/js/jquery.panelslider.min.js'; ?>"></script>
 
 <!---*****************************************************************************************************-->
@@ -39,11 +38,11 @@
 <link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/css001.css'; ?>"></link>
 <link type="text/css" rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/bootstrap-wysihtml5.css'; ?>"></link>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-=======
+
+
 <script type="text/javascript" src="<?php echo $RUTAp.'fullcalendar-2.2.2/lib/moment.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'fullcalendar-2.2.2/fullcalendar.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'fullcalendar-2.2.2/lang/es.js'; ?>"></script>
->>>>>>> ed431e2fe43380ff3f3db7cd168c08e9d40fb362
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript">
