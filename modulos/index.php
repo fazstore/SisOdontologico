@@ -37,13 +37,12 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
 <body>
 	<?php include(RUTAcom.'menu-principal.php'); 
 	$fechacita= date("Y-m-d");
-	/*
-	$sql = sprintf("SELECT phpc_events.eid, phpc_events.subject, phpc_events.description, phpc_occurrences.start_ts, phpc_occurrences.end_ts FROM phpc_events 
-inner join phpc_occurrences on phpc_events.eid = phpc_occurrences.eid where phpc_occurrences.start_ts>='".$fechacita." 01:00:00' and phpc_occurrences.end_ts<='".$fechacita." 24:00:00' ORDER BY phpc_occurrences.start_ts ASC");
+	
+	$sql = sprintf("SELECT * FROM reservar_cita inner join turno on reservar_cita.id_turno= turno.id_turno  where rci_fecha_atencion >='2014/12/22' and rci_fecha_atencion <='2014/12/27' order by rci_fecha_atencion ASC");
 	$query = mysql_query($sql, $conexion_mysql) or die(mysql_error());
 	$row = mysql_fetch_assoc($query);
 	$tot_rows = mysql_num_rows($query);
-	*/?>       
+	?>       
 	<div class="container">    
     	<br/>
 		<br/>
@@ -113,8 +112,8 @@ inner join phpc_occurrences on phpc_events.eid = phpc_occurrences.eid where phpc
                 				<thead>
                 					<tr>
                 						<th>Paciente</th>
-                						<th>Inicia</th>
-                                        <th>Termina</th>
+                						<th>Fecha</th>
+                                        <th>Turno</th>
             						    <!--<th width="125px"></th>	-->
                     			     </tr>
                     			</thead>
@@ -123,9 +122,9 @@ inner join phpc_occurrences on phpc_events.eid = phpc_occurrences.eid where phpc
                 				do{
                 					?>
                 					  <tr>
-                                    	<td><a data-toggle="tooltip" style="color:#000" data-placement="right" title="<?php echo $row['description']; ?>"><i class="icon-comment"></i> <?php echo $row['subject'];?> </a></td>
-                                        <td><?php echo substr($row['start_ts'],11,5);?></td>
-                                        <td><?php echo substr($row['end_ts'],11,5);?></td>
+                                    	<td><a data-toggle="tooltip" style="color:#000" data-placement="right" title="<?php echo $row['rci_observaciones']; ?>"><i class="icon-comment"></i> <?php echo $row['rci_nombre_paciente'];?> </a></td>
+                                        <td><?php echo $row['rci_fecha_atencion'];?></td>
+                                        <td><?php echo $row['tur_hora'];?></td>
                         <!--
                         <td> <span class="label label-warning"> NOTIFICAR</span></td>
                         -->
