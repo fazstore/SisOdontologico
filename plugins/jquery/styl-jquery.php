@@ -11,18 +11,21 @@
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery-ui.custom.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/chosen.jquery.min.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/jquery.gritter.min.js'; ?>"></script>
-<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/gcal.js'; ?>"></script>
-<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/es.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/bootstrap-wysihtml5.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAm.'historia_clinica/js-fncs/funciones-odontograma.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo $RUTAcom.'ckeditor/ckeditor.js'; ?>"></script>
+<!---
+<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/gcal.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo $RUTAp.'jquery/js/es.js'; ?>"></script>
+
 <script type="text/javascript" src="<?php echo $RUTAs.'styles/js/jquery.panelslider.min.js'; ?>"></script>
 
-<!---*****************************************************************************************************-->
-<script type="text/javascript" src="<?php echo $RUTAs.'styles/js/jquery.jpanelmenu-legacy.js'; ?>"></script>
-<script src="http://use.typekit.net/koc4rlq.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
+*****************************************************************************************************	
+<script>try{Typekit.load();}catch(e){}</script>
     <script src="js/script.min.js"></script>
+<script type="text/javascript" src="<?php echo $RUTAs.'styles/js/jquery.jpanelmenu-legacy.js'; ?>"></script>-->
+<script src="http://use.typekit.net/koc4rlq.js"></script>
+
 
     	<link rel="stylesheet" href="<?php echo $RUTAp.'jquery/css/style.css'; ?>">
 
