@@ -38,7 +38,8 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
 	<?php include(RUTAcom.'menu-principal.php'); 
 	$fechacita= date("Y-m-d");
 	
-	$sql = sprintf("SELECT * FROM reservar_cita inner join turno on reservar_cita.id_turno= turno.id_turno  where rci_fecha_atencion >='2014/12/22' and rci_fecha_atencion <='2014/12/27' order by rci_fecha_atencion ASC");
+	$sql = sprintf("SELECT * FROM reservar_cita inner join turno on reservar_cita.id_turno= turno.id_turno 
+inner join tratamientos on tratamientos.tra_id = reservar_cita.tra_id where rci_fecha_atencion >='".date('Y-m-d', strtotime('-1 week'))."' and rci_fecha_atencion <='".date('Y-m-d', strtotime('1 week'))."' order by rci_fecha_atencion ASC");
 	$query = mysql_query($sql, $conexion_mysql) or die(mysql_error());
 	$row = mysql_fetch_assoc($query);
 	$tot_rows = mysql_num_rows($query);
@@ -122,7 +123,12 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
                 				do{
                 					?>
                 					  <tr>
-                                    	<td><a data-toggle="tooltip" style="color:#000" data-placement="right" title="<?php echo $row['rci_observaciones']; ?>"><i class="icon-comment"></i> <?php echo $row['rci_nombre_paciente'];?> </a></td>
+                                    	<td><a data-toggle="tooltip" style="color:#000" data-placement="right" title="
+										<?php 
+										echo 'Tratamientos: '.$row['tra_nom']; 
+										echo ' <br>'; 
+										echo'Observación: '.$row['rci_observaciones'];
+										?>"><i class="icon-comment"></i> <?php echo $row['rci_nombre_paciente'];?> </a></td>
                                         <td><?php echo $row['rci_fecha_atencion'];?></td>
                                         <td><?php echo $row['tur_hora'];?></td>
                         <!--
