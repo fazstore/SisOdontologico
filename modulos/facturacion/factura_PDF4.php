@@ -24,25 +24,25 @@
 	<table border="0" cellpadding="0" cellspacing="0">
 		<tr>
         	<td style="width:650px">
- 				<table border="0" cellpadding="0" cellspacing="0">
+            	<table border="0" cellpadding="0" cellspacing="0">
                 	<tr>
                     	<td style="width:60px"> </td>
-                    	<td style="width:370px"><div style="padding:0px 0px 0px 0px;"> <?php echo "        ".$row['per_nombre']; ?></div></td>
+                    	<td style="width:370px; background:#C30"><div style="padding:0px 0px 0px 0px;"> <?php echo "        ".$row['per_nombre']; ?></div></td>
                         <td style="width:80px"> </td>
-                        <td style="width:180px"><div style="padding:0px 0px 0px 0px;"> <?php echo $row['cab_fac_fech']; ?></div></td>
+                        <td style="width:180px; background:#C64"><div style="padding:0px 0px 0px 0px;"> <?php echo $row['cab_fac_fech']; ?></div></td>
                     </tr>
                 </table>
                 <table border="0" cellpadding="0" cellspacing="0">
                     <tr><td style="width:60px"> </td>
-                    	<td style="width:250px; "><div style="padding:5px 0px 0px 0px;"><?php echo $row['per_documento']; ?></div></td>
+                    	<td style="width:250px; background:#C99"><div style="padding:5px 0px 0px 0px;"><?php echo $row['per_documento']; ?></div></td>
                         <td style="width:70px"> </td>
-                        <td style="width:310; "><div style="padding:5px 0px 10px 0px;" ><?php echo $row['per_direccion1'].'  '.$row['per_num_viv']; ?></div></td>
+                        <td style="width:310; background:#C12"><div style="padding:5px 0px 10px 0px;" ><?php echo $row['per_direccion1'].'  '.$row['per_num_viv']; ?></div></td>
                     </tr>
                 </table>
                 <table border="0" cellpadding="0" cellspacing="0">
                     <tr>
                     	<td style="width:540px"></td>
-                        <td style="width:150px; "><div  ><?php echo $rowper['tel_numero']; ?></div></td>
+                        <td style="width:150px; background:#06F"><div  ><?php echo $rowper['tel_numero']; ?></div></td>
                     </tr>
                 </table>
             </td>
@@ -62,10 +62,10 @@
    <table class="table table-bordered table-condensed table-striped" id="tab_usr" >
    <thead>
         <tr>
-              <td style="width:110px;  text-align: center" ><div style="padding:30px 0px 0px 0px;"></div></td>
-              <td style="width:370px;  text-align: center"></td>
-              <td style="width:100px;  text-align: center"></td>
-              <td style="width:100px;  text-align: center"></td>
+              <td style="width:110px; background:#06F; text-align: center" ><div style="padding:30px 0px 0px 0px;"></div></td>
+              <td style="width:370px; background:#07F; text-align: center"></td>
+              <td style="width:100px; background:#06F; text-align: center"></td>
+              <td style="width:100px; background:#07F; text-align: center"></td>
         </tr>
    </thead>
    <tbody>
@@ -90,22 +90,22 @@
                 <tr>
                     <td style="width:550px;"></td>
                     <td style="width:60px; text-align: right"></td>
-                    <td style="width:60px; text-align: center; "><?php echo $row['cab_fac_subt']; ?></td>
+                    <td style="width:60px; text-align: center; background:#07F"><?php echo $row['cab_fac_subt']; ?></td>
                 </tr>
                 <tr>
                     <td style="width:470px;"></td>
                     <td style="width:60px; text-align: right"> </td>
-                    <td style="width:60px; text-align: center; "><?php echo $row['cab_fac_des']; ?><div style="padding:0px 0px 15px 0px;" ></div></td>
+                    <td style="width:60px; text-align: center; background:#07F"><?php echo $row['cab_fac_des']; ?><div style="padding:0px 0px 15px 0px;" ></div></td>
                 </tr>
                 <tr>
                     <td style="width:470px;"></td>
                     <td style="width:60px; text-align: right"> </td>
-                    <td style="width:60px; text-align: center; "><?php echo $row['cab_fac_iva']; ?><div style="padding:0px 0px 20px 0px;" ></div></td>
+                    <td style="width:60px; text-align: center; background:#07F"><?php echo $row['cab_fac_iva']; ?><div style="padding:0px 0px 20px 0px;" ></div></td>
                 </tr>
                 <tr>
                     <td style="width:470px;"></td>
                     <td style="width:60px; text-align: right"> </td>
-                    <td style="width:60px; font-size:16px; text-align: center; "><?php echo $row['cab_fac_tot']; ?><div style="padding:25px 30px 0px 0px;" ></div> </td>
+                    <td style="width:60px; font-size:16px; text-align: center; background:#07F"><?php echo $row['cab_fac_tot']; ?><div style="padding:25px 30px 0px 0px;" ></div> </td>
                 </tr>
             </table>
         </td>

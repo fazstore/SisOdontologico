@@ -16,7 +16,8 @@
 	
 		}
 	$tot_fac=$total-$tdescuento;
-	$sql = sprintf('Insert into cabecera_factura (cab_fac_val_pag, cab_fac_des, cab_fac_subt, cab_fac_iva, cab_fac_tot, cab_fac_num, per_id, cab_fac_eliminado) values (%s,%s,%s,%s,%s,%s,%s,%s)',
+	$sql = sprintf('Insert into cabecera_factura (cab_fac_fech, cab_fac_val_pag, cab_fac_des,  cab_fac_subt, cab_fac_iva, cab_fac_tot, cab_fac_num, per_id, cab_fac_eliminado) values (%s,%s,%s,%s,%s,%s,%s,%s,%s)',
+		GetSQLValueString(date('Y-m-d'), 'text'),
 		GetSQLValueString($tot_fac, 'text'),
 		GetSQLValueString($tdescuento, 'text'),
 		GetSQLValueString($total, 'text'),
@@ -42,7 +43,7 @@
 
 			$precios = fnc_datGeneral($rowtratamientosxrealizar['tra_id'],'tra_id','precios');
 			$sql2 = sprintf('INSERT INTO detalle_factura (cab_fac_id, tra_id, det_tra_val, det_tra_des, det_tra_can, det_fac_eliminado) VALUES (%s,%s,%s,%s,%s,%s)',
-		GetSQLValueString($id_fac, 'text'),
+		GetSQLValueString($id_insert_cab_fac, 'text'),
 		GetSQLValueString($rowtratamientosxrealizar['tra_id'], 'text'),
 		GetSQLValueString($precios['pre_val'], 'text'),
 		GetSQLValueString($descuento_estado, 'text'),
@@ -69,7 +70,7 @@
 		}
 		mysql_query("SET AUTOCOMMIT=1;", $conexion_mysql); //Habilita el autocommit
 
-	echo $MSG;
+	echo $id_insert_cab_fac;
 
 	
 ?>

@@ -89,7 +89,7 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 			url: url,
 			data: parametros,
 			success : function (resultado){
-				vex.dialog.alert(resultado);
+				window.open( "../facturacion/factura_PDF.php?id="+resultado, "Imprimir factura" , "width=800 , height = 600")
                 $("#imp_fac").show();
                             }
    			});
@@ -249,7 +249,7 @@ WHERE persona.per_id ='".$per_id."' and tel_tipo ='Convencional'");
 								<td><input id="documento" maxlength="13" name="documento" placeholder="Cédula o Ruc" required onkeypress="return solonumeros(event)"></td>
                                 <td><input type="button" id="bbus" name="bbus" value="Buscar" class="btn btn-info" onClick="ValidarCliente()" ></td>
                                 <td><input type="button" id="bcre" name="bcre" value="CREAR" class="btn btn-info" onClick="CrearCliente()"></td>
-                                <<!--td><input type="button" id="imp_fac" name="imp_fac" value="Imprimir Factura" class="btn btn-inverse" onClick="ImprimirFact('<?php echo $tra_rea_fec; ?>','<?php echo $per_id; ?>')" > -->
+                                <!--td><input type="button" id="imp_fac" name="imp_fac" value="Imprimir Factura" class="btn btn-inverse" onClick="ImprimirFact('<?php echo $tra_rea_fec; ?>','<?php echo $per_id; ?>')" > -->
                                 </td>
 						  	</tr>
 							  <tr>

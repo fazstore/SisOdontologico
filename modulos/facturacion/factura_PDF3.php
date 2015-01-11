@@ -20,29 +20,26 @@
 ?>
 <page>
             <!-- INICIO -->
-<div style="padding:140px 20px -900px 30px; border:0px none #FFF; width:900px;">
+<div style="padding:70px 0px 0px 50px; border:0px none #FFF; width:700px;">
 	<table border="0" cellpadding="0" cellspacing="0">
 		<tr>
         	<td style="width:650px">
- 				<table border="0" cellpadding="0" cellspacing="0">
+            	<table border="0" cellpadding="0" cellspacing="0">
                 	<tr>
-                    	<td style="width:60px"> </td>
-                    	<td style="width:370px"><div style="padding:0px 0px 0px 0px;"> <?php echo "        ".$row['per_nombre']; ?></div></td>
-                        <td style="width:80px"> </td>
-                        <td style="width:180px"><div style="padding:0px 0px 0px 0px;"> <?php echo $row['cab_fac_fech']; ?></div></td>
-                    </tr>
-                </table>
-                <table border="0" cellpadding="0" cellspacing="0">
-                    <tr><td style="width:60px"> </td>
-                    	<td style="width:250px; "><div style="padding:5px 0px 0px 0px;"><?php echo $row['per_documento']; ?></div></td>
-                        <td style="width:70px"> </td>
-                        <td style="width:310; "><div style="padding:5px 0px 10px 0px;" ><?php echo $row['per_direccion1'].'  '.$row['per_num_viv']; ?></div></td>
+                    	<td style="width:450px; background:#C30"><div style="padding:5px 0px 5px 5px;">Cliente: <?php echo $row['per_nombre']; ?></div></td>
+                        <td style="width:200px; background:#C64"><div style="padding:5px 0px 5px 5px;">Fecha: <?php echo $row['cab_fac_fech']; ?></div></td>
                     </tr>
                 </table>
                 <table border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                    	<td style="width:540px"></td>
-                        <td style="width:150px; "><div  ><?php echo $rowper['tel_numero']; ?></div></td>
+                    	<td style="width:300px; background:#C99"><div style="padding:5px 0px 5px 5px;">RUC/CI:  <?php echo $row['per_documento']; ?></div></td>
+                        <td style="width:350; background:#C12"><div style="padding:5px 0px 5px 5px;">Dirección:  <?php echo $row['per_direccion1'].'  '.$row['per_num_viv']; ?></div></td>
+                    </tr>
+                </table>
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                    	<td style="width:500px"></td>
+                        <td style="width:150px; background:#06F"><div style="padding:5px 0px 5px 5px; >Teléfono: <?php echo $rowper['tel_numero']; ?></div></td>
                     </tr>
                 </table>
             </td>
@@ -62,10 +59,10 @@
    <table class="table table-bordered table-condensed table-striped" id="tab_usr" >
    <thead>
         <tr>
-              <td style="width:110px;  text-align: center" ><div style="padding:30px 0px 0px 0px;"></div></td>
-              <td style="width:370px;  text-align: center"></td>
-              <td style="width:100px;  text-align: center"></td>
-              <td style="width:100px;  text-align: center"></td>
+              <td style="width:100px; background:#06F; text-align: center" >Cantidad</td>
+              <td style="width:350px; background:#07F; text-align: center">Descripcion</td>
+              <td style="width:100px; background:#06F; text-align: center">V. Unitario</td>
+              <td style="width:100px; background:#07F; text-align: center">Total</td>
         </tr>
    </thead>
    <tbody>
@@ -80,39 +77,39 @@
         while ($row2 = mysql_fetch_assoc($query2)); ?>
    </tbody>
 </table>
-</div>
-<table style="position: absolute; margin-top: 450px">
+
+<table style="position: absolute; margin-top: 360px">
 
     <tr>
         <td>
 
             <table style="font-size:12px; " border="0">
                 <tr>
-                    <td style="width:550px;"></td>
-                    <td style="width:60px; text-align: right"></td>
-                    <td style="width:60px; text-align: center; "><?php echo $row['cab_fac_subt']; ?></td>
+                    <td style="width:450px;"></td>
+                    <td style="width:100px; text-align: right">Subtotal: </td>
+                    <td style="width:100px; text-align: center; background:#07F"><?php echo $row['cab_fac_subt']; ?></td>
                 </tr>
                 <tr>
-                    <td style="width:470px;"></td>
-                    <td style="width:60px; text-align: right"> </td>
-                    <td style="width:60px; text-align: center; "><?php echo $row['cab_fac_des']; ?><div style="padding:0px 0px 15px 0px;" ></div></td>
+                    <td style="width:450px;"></td>
+                    <td style="width:100px; text-align: right">Descuento: </td>
+                    <td style="width:100px; text-align: center; background:#07F"><?php echo $row['cab_fac_des']; ?></td>
                 </tr>
                 <tr>
-                    <td style="width:470px;"></td>
-                    <td style="width:60px; text-align: right"> </td>
-                    <td style="width:60px; text-align: center; "><?php echo $row['cab_fac_iva']; ?><div style="padding:0px 0px 20px 0px;" ></div></td>
+                    <td style="width:450px;"></td>
+                    <td style="width:100px; text-align: right">IVA: </td>
+                    <td style="width:100px; text-align: center; background:#07F"><?php echo $row['cab_fac_iva']; ?></td>
                 </tr>
                 <tr>
-                    <td style="width:470px;"></td>
-                    <td style="width:60px; text-align: right"> </td>
-                    <td style="width:60px; font-size:16px; text-align: center; "><?php echo $row['cab_fac_tot']; ?><div style="padding:25px 30px 0px 0px;" ></div> </td>
+                    <td style="width:450px;"></td>
+                    <td style="width:100px; text-align: right">Total: </td>
+                    <td style="width:100px; text-align: center; background:#07F"><?php echo $row['cab_fac_tot']; ?></td>
                 </tr>
             </table>
         </td>
     </tr>
 
 </table>
-
+</div>
 <?php mysql_free_result($query2);
 }else{ echo '<div class="alert alert-error"><h4>No existe detalle en la factura **** ERROR EN LA FACTURA ****</h4></div>'; } ?>
 
